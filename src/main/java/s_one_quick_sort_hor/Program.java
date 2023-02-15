@@ -14,9 +14,9 @@ public class Program {
         // SortUtils.quickSort(arr, 0, arr.length-1);
         // ArrayUtils.printArray(arr);
 
-        int[] test = ArrayUtils.prepareArray(1100);
+        int[] test = ArrayUtils.prepareArray(5000);
 
-        int[] testT = ArrayUtils.prepareArray(1100);
+        int[] testT = test.clone();
         // long startTime = System.currentTimeMillis();
         // SortUtils.directSort(test);
         // long endTime = System.currentTimeMillis();
@@ -149,7 +149,7 @@ public class Program {
                 heap(array, array.length, i);
             }
 
-            for (int i = array.length-1; i >=0; i--) {
+            for (int i = array.length - 1; i >= 0; i--) {
                 int temp = array[0];
                 array[0] = array[i];
                 array[i] = temp;
@@ -158,7 +158,7 @@ public class Program {
             }
         }
 
-        static void heapVersTwo(int[] array, int heapSize, int rootIndex, int iteration){
+        static void heapVersTwo(int[] array, int heapSize, int rootIndex, int iteration) {
             int maxElement = rootIndex;
             int leftChild = 2 * rootIndex + 1;
             int rightChild = 2 * rootIndex + 2;
@@ -177,18 +177,17 @@ public class Program {
                 array[maxElement] = temp;
 
                 heapVersTwo(array, heapSize, maxElement, iteration);
-            }
-            if (iteration > 0) {
-                heapVersTwo(array, heapSize, iteration-1, iteration -1);
+            } else if (iteration > 0) {
+                heapVersTwo(array, heapSize, iteration - 1, iteration - 1);
             }
         }
 
-        static void heapSortTwo(int[] array){
+        static void heapSortTwo(int[] array) {
             int heapSize = array.length;
 
             heapVersTwo(array, heapSize, heapSize, heapSize);
 
-            for (int i = heapSize-1; i >=0 ; i--) {
+            for (int i = heapSize - 1; i >= 0; i--) {
                 int temp = array[0];
                 array[0] = array[i];
                 array[i] = temp;
