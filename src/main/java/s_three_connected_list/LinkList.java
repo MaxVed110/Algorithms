@@ -4,6 +4,7 @@ public class LinkList {
     Node head;
     Node tail;
 
+
     public void add(int value) {
         Node addNode = new Node();
         addNode.value = value;
@@ -16,6 +17,9 @@ public class LinkList {
         tail = addNode;
     }
 
+    /**
+     * метод для теста односвязанного
+     */
     public void addFirst(int value){
         Node node = new Node();
         node.value = value;
