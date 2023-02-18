@@ -14,7 +14,7 @@ public class Program {
         // SortUtils.quickSort(arr, 0, arr.length-1);
         // ArrayUtils.printArray(arr);
 
-        int[] test = ArrayUtils.prepareArray(5000);
+        int[] test = ArrayUtils.prepareArray(6000);
 
         int[] testT = test.clone();
         // long startTime = System.currentTimeMillis();
